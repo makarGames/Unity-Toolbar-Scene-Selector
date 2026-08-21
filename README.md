@@ -1,6 +1,6 @@
 # Unity Scene Toolbar
 
-[![Unity 6000.0+](https://img.shields.io/badge/Unity-6000.0%2B-black.svg?style=flat&logo=unity)](https://unity.com/)
+[![Unity 2022.3+](https://img.shields.io/badge/Unity-2022.3%2B-black.svg?style=flat&logo=unity)](https://unity.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Editor productivity tools that live on the Unity **Main Toolbar**.
@@ -16,7 +16,7 @@ Jump into Play Mode from **Build Settings scene index 0**, or switch between sce
 - **Play from first scene** — one click opens the first enabled scene in Build Settings and enters Play Mode; when you stop, your previous scene is restored
 - **Quick scene switcher** — dropdown / popup listing all scenes from Build Settings (falls back to every scene in the project if Build Settings is empty)
 - **Unity 6.3+ path** — official UI Toolkit `MainToolbarElement` / `MainToolbarButton` / `MainToolbarDropdown` APIs (**no reflection**)
-- **Unity 6.0–6.2 path** — legacy toolbar injection (reflection into the older Editor toolbar), so the package still works before 6.3
+- **Unity 2022.3 – 6.2 path** — legacy toolbar injection (reflection into the older Editor toolbar), verified on Unity 2022.3
 
 ---
 
@@ -24,9 +24,9 @@ Jump into Play Mode from **Build Settings scene index 0**, or switch between sce
 
 | Requirement | Version | Implementation |
 |-------------|---------|----------------|
-| Unity | **6000.0+** (Unity 6) | — |
-| Unity **6.3+** | Recommended | Official Main Toolbar API |
-| Unity **6.0–6.2** | Supported | Legacy reflection fallback |
+| Unity | **2022.3** or newer | — |
+| Unity **6.3+** | Recommended | Official Main Toolbar API (no reflection) |
+| Unity **2022.3 – 6.2** | Supported | Legacy reflection fallback |
 
 This package is **Editor-only**. It does not ship any runtime code and will not affect player builds.
 
@@ -53,7 +53,7 @@ Git URL: [https://github.com/makarGames/Unity-Toolbar-Scene-Selector.git](https:
 ### Option B — Specific version / tag
 
 ```
-https://github.com/makarGames/Unity-Toolbar-Scene-Selector.git#v1.1.0
+https://github.com/makarGames/Unity-Toolbar-Scene-Selector.git#v1.1.1
 ```
 
 ### Option C — OpenUPM (optional)
