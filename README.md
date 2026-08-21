@@ -1,9 +1,9 @@
 # Unity Scene Toolbar
 
-[![Unity 6000.3+](https://img.shields.io/badge/Unity-6000.3%2B-black.svg?style=flat&logo=unity)](https://unity.com/)
+[![Unity 6000.0+](https://img.shields.io/badge/Unity-6000.0%2B-black.svg?style=flat&logo=unity)](https://unity.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Editor productivity tools for **Unity 6.3+** that live directly in the **Main Toolbar**.
+Editor productivity tools that live on the Unity **Main Toolbar**.
 
 Jump into Play Mode from **Build Settings scene index 0**, or switch between scenes without leaving the toolbar — no more digging through the Project window or File menu mid-iteration.
 
@@ -14,19 +14,19 @@ Jump into Play Mode from **Build Settings scene index 0**, or switch between sce
 ## Features
 
 - **Play from first scene** — one click opens the first enabled scene in Build Settings and enters Play Mode; when you stop, your previous scene is restored
-- **Quick scene switcher** — dropdown listing all scenes from Build Settings (falls back to every scene in the project if Build Settings is empty)
-- **Unity 6.3 Main Toolbar API** — built on the UI Toolkit `MainToolbarElement` / `MainToolbarButton` / `MainToolbarDropdown` APIs
-- **Auto-show on install** — custom toolbar elements are forced visible so you do not have to hunt for them in the toolbar overflow menu
+- **Quick scene switcher** — dropdown / popup listing all scenes from Build Settings (falls back to every scene in the project if Build Settings is empty)
+- **Unity 6.3+ path** — official UI Toolkit `MainToolbarElement` / `MainToolbarButton` / `MainToolbarDropdown` APIs (**no reflection**)
+- **Unity 6.0–6.2 path** — legacy toolbar injection (reflection into the older Editor toolbar), so the package still works before 6.3
 
 ---
 
 ## Requirements
 
-| Requirement | Version |
-|-------------|---------|
-| Unity | **6000.3** or newer (**Unity 6.3+** LTS) |
-
-> **Note:** The extensible Main Toolbar API (`MainToolbarElement`, etc.) was introduced in Unity 6.3. Earlier versions (including Unity 6.0–6.2) are **not supported** and will fail to compile.
+| Requirement | Version | Implementation |
+|-------------|---------|----------------|
+| Unity | **6000.0+** (Unity 6) | — |
+| Unity **6.3+** | Recommended | Official Main Toolbar API |
+| Unity **6.0–6.2** | Supported | Legacy reflection fallback |
 
 This package is **Editor-only**. It does not ship any runtime code and will not affect player builds.
 
@@ -53,7 +53,7 @@ Git URL: [https://github.com/makarGames/Unity-Toolbar-Scene-Selector.git](https:
 ### Option B — Specific version / tag
 
 ```
-https://github.com/makarGames/Unity-Toolbar-Scene-Selector.git#v1.0.0
+https://github.com/makarGames/Unity-Toolbar-Scene-Selector.git#v1.1.0
 ```
 
 ### Option C — OpenUPM (optional)
@@ -75,7 +75,7 @@ After import, two controls appear on the Unity Main Toolbar:
 | **Play From First Scene** | Saves (if needed), opens Build Settings scene index 0, then presses Play. On exit from Play Mode, restores the scene you were editing. |
 | **Scene Switcher** | Shows the active scene name. Click to pick another scene from Build Settings. |
 
-If a control is missing, open the Main Toolbar overflow menu (**⋯**) and enable **Unity Scene Toolbar** items.
+On **Unity 6.3+**, if a control is missing, open the Main Toolbar overflow menu (**⋯**) and enable **Unity Scene Toolbar** items.
 
 ---
 
@@ -89,9 +89,9 @@ com.makargames.unity-scene-toolbar/
 ├── LICENSE
 ├── Editor/
 │   ├── UnitySceneToolbar.Editor.asmdef
-│   ├── FirstScenePlayButton.cs
-│   ├── SceneSwitcherToolbar.cs
-│   └── MainToolbarVisibility.cs
+│   ├── SceneToolbarActions.cs          (shared logic)
+│   ├── FirstScenePlayButton.cs         (#if 6.3 API / else legacy)
+│   └── SceneSwitcherToolbar.cs         (#if 6.3 API / else legacy)
 └── documentation/
     └── demo.gif
 ```
