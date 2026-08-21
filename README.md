@@ -1,9 +1,9 @@
 # Unity Scene Toolbar
 
-[![Unity 6000.0+](https://img.shields.io/badge/Unity-6000.0%2B-black.svg?style=flat&logo=unity)](https://unity.com/)
+[![Unity 6000.3+](https://img.shields.io/badge/Unity-6000.3%2B-black.svg?style=flat&logo=unity)](https://unity.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Editor productivity tools for Unity 6 that live directly in the **Main Toolbar**.
+Editor productivity tools for **Unity 6.3+** that live directly in the **Main Toolbar**.
 
 Jump into Play Mode from **Build Settings scene index 0**, or switch between scenes without leaving the toolbar — no more digging through the Project window or File menu mid-iteration.
 
@@ -15,7 +15,7 @@ Jump into Play Mode from **Build Settings scene index 0**, or switch between sce
 
 - **Play from first scene** — one click opens the first enabled scene in Build Settings and enters Play Mode; when you stop, your previous scene is restored
 - **Quick scene switcher** — dropdown listing all scenes from Build Settings (falls back to every scene in the project if Build Settings is empty)
-- **Unity 6 Main Toolbar API** — built on the UI Toolkit `MainToolbarElement` / `MainToolbarButton` / `MainToolbarDropdown` APIs (Unity 6.3+)
+- **Unity 6.3 Main Toolbar API** — built on the UI Toolkit `MainToolbarElement` / `MainToolbarButton` / `MainToolbarDropdown` APIs
 - **Auto-show on install** — custom toolbar elements are forced visible so you do not have to hunt for them in the toolbar overflow menu
 
 ---
@@ -24,8 +24,9 @@ Jump into Play Mode from **Build Settings scene index 0**, or switch between sce
 
 | Requirement | Version |
 |-------------|---------|
-| Unity | **6000.0** or newer (Unity 6+) |
-| Recommended | Unity **6.3+** (Main Toolbar UI Toolkit API) |
+| Unity | **6000.3** or newer (**Unity 6.3+** LTS) |
+
+> **Note:** The extensible Main Toolbar API (`MainToolbarElement`, etc.) was introduced in Unity 6.3. Earlier versions (including Unity 6.0–6.2) are **not supported** and will fail to compile.
 
 This package is **Editor-only**. It does not ship any runtime code and will not affect player builds.
 

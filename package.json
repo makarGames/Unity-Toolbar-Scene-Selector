@@ -1,9 +1,9 @@
 {
   "name": "com.makargames.unity-scene-toolbar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Unity Scene Toolbar",
   "description": "Quickly start playback from Scene Index 0 or switch scenes directly from the Unity Main Toolbar.",
-  "unity": "6000.0",
+  "unity": "6000.3",
   "documentationUrl": "https://github.com/makarGames/Unity-Toolbar-Scene-Selector#readme",
   "changelogUrl": "https://github.com/makarGames/Unity-Toolbar-Scene-Selector/blob/main/CHANGELOG.md",
   "licensesUrl": "https://github.com/makarGames/Unity-Toolbar-Scene-Selector/blob/main/LICENSE",
